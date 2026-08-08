@@ -1,0 +1,5 @@
+# Netlify / Cloudflare Pages — cross-origin isolation for the Godot Web export.
+# Only strictly required if you enable "Thread Support" in the Web export preset.
+/*
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
