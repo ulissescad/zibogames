@@ -170,46 +170,78 @@
   jogo.
 </p>
 
-<!--
-  ================================================================
-  SEÇÃO DE CONSENTIMENTO (EEE / Reino Unido / Suíça)
-  ================================================================
-  Descomentar SOMENTE depois de implementar o formulário de consentimento
-  (Google User Messaging Platform / UMP) no aplicativo. Enquanto o UMP não
-  estiver no build, este texto seria falso — e publicar declaração falsa de
-  consentimento é pior do que não distribuir na Europa.
-
-  A alternativa é não disponibilizar o app no EEE, Reino Unido e Suíça, caso em
-  que esta seção não é necessária.
-
 <h2>4. Usuários no Espaço Econômico Europeu, Reino Unido e Suíça</h2>
 <p>
-  Se você estiver em um desses territórios, na primeira abertura do jogo é
-  exibido um formulário de consentimento fornecido pela
-  <strong>Google User Messaging Platform</strong>, no qual você escolhe se
-  aceita anúncios personalizados. Sua escolha é registrada pelo Google e pode
-  ser alterada a qualquer momento pela opção de privacidade disponível no menu
-  do jogo. Sem o seu consentimento, apenas anúncios não personalizados são
-  exibidos.
+  Se você estiver em um desses territórios, o jogo exibe, na primeira abertura,
+  um formulário de consentimento fornecido pela
+  <strong>Google User Messaging Platform (UMP)</strong> — a plataforma de
+  consentimento certificada do próprio Google. Nele você decide se aceita o uso
+  dos seus dados para anúncios personalizados.
 </p>
-  ================================================================
--->
-
-<h2>4. Permissões do aplicativo</h2>
 <p>
-  O jogo solicita <strong>uma única permissão</strong>: acesso à internet,
-  necessário exclusivamente para carregar os anúncios. A biblioteca de
-  publicidade do Google também declara o acesso ao identificador de publicidade
-  (<code>com.google.android.gms.permission.AD_ID</code>), conforme descrito na
-  seção 2.
+  Nenhum anúncio é solicitado antes de você responder: o jogo só inicializa a
+  biblioteca de publicidade depois que a sua escolha é registrada.
 </p>
+<ul>
+  <li><strong>Se você aceitar</strong>, os anúncios podem ser personalizados
+      conforme descrito na seção 2.</li>
+  <li><strong>Se você recusar</strong>, o jogo continua funcionando normalmente e
+      passa a exibir apenas anúncios <strong>não personalizados</strong>, que
+      não usam seu histórico para seleção.</li>
+</ul>
+<p>
+  <strong>Para mudar de ideia depois:</strong> o menu principal do jogo exibe,
+  nesses territórios, um botão <strong>"Privacidade"</strong> que reabre o mesmo
+  formulário a qualquer momento. Esse botão não aparece em regiões onde o
+  formulário não se aplica, porque nelas não há escolha registrada a revisar.
+</p>
+
+<h2>5. Permissões do aplicativo</h2>
+<p>
+  O jogo em si solicita <strong>uma única permissão</strong>: acesso à internet,
+  necessário exclusivamente para carregar os anúncios.
+</p>
+<p>
+  A biblioteca de publicidade do Google acrescenta outras ao instalador, todas
+  ligadas à exibição e à medição de anúncios. Nenhuma delas dá acesso ao conteúdo
+  do seu aparelho, e o jogo não as utiliza para nada por conta própria:
+</p>
+<table>
+  <thead>
+    <tr><th>Permissão</th><th>Para que o SDK de anúncios a usa</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>AD_ID</code></td>
+      <td>Ler o identificador de publicidade, conforme a seção 2.</td>
+    </tr>
+    <tr>
+      <td><code>ACCESS_ADSERVICES_*</code></td>
+      <td>APIs do Privacy Sandbox do Android, usadas pelo Google para medir
+          anúncios sem identificadores entre aplicativos.</td>
+    </tr>
+    <tr>
+      <td><code>ACCESS_NETWORK_STATE</code></td>
+      <td>Saber se há conexão e de que tipo, antes de tentar baixar um anúncio.</td>
+    </tr>
+    <tr>
+      <td><code>READ_BASIC_PHONE_STATE</code></td>
+      <td>Identificar o tipo de rede móvel. <strong>Não</strong> dá acesso ao seu
+          número, à sua operadora nem a chamadas.</td>
+    </tr>
+    <tr>
+      <td><code>WAKE_LOCK</code> e <code>FOREGROUND_SERVICE</code></td>
+      <td>Impedir que a tela durma durante um anúncio em vídeo.</td>
+    </tr>
+  </tbody>
+</table>
 <p>
   O jogo <strong>não</strong> solicita e <strong>não</strong> acessa: câmera,
   microfone, contatos, agenda, localização precisa, SMS, telefone, arquivos
   pessoais, fotos nem lista de aplicativos instalados.
 </p>
 
-<h2>5. Com quem compartilhamos dados</h2>
+<h2>6. Com quem compartilhamos dados</h2>
 <p>
   <strong>Não vendemos, não alugamos e não compartilhamos dados com ninguém.</strong>
   Não há compartilhamento porque não há coleta do nosso lado. O único terceiro
@@ -223,7 +255,7 @@
   mediação com outras redes de anúncio.
 </p>
 
-<h2>6. Retenção e exclusão de dados</h2>
+<h2>7. Retenção e exclusão de dados</h2>
 <p>
   <strong>Do nosso lado não há o que excluir:</strong> não mantemos banco de
   dados, conta de usuário nem cópia do seu progresso. Nada é retido por nós, em
@@ -249,7 +281,7 @@
   responderemos em até 30 dias.
 </p>
 
-<h2>7. Segurança</h2>
+<h2>8. Segurança</h2>
 <p>
   O arquivo de progresso é gravado na área privada do aplicativo, isolada de
   outros aplicativos pelo próprio sistema Android. Como não transmitimos nem
@@ -258,7 +290,7 @@
   dele é feita por conexão criptografada (HTTPS), sob responsabilidade do Google.
 </p>
 
-<h2>8. Crianças</h2>
+<h2>9. Crianças</h2>
 <p>
   O Roof Riot <strong>não é dirigido a crianças</strong> e não se destina a
   menores de 13 anos. Não coletamos conscientemente dados de crianças, e não
@@ -272,7 +304,7 @@
   publicidade conforme as seções 3 e 6.
 </p>
 
-<h2>9. Alterações nesta política</h2>
+<h2>10. Alterações nesta política</h2>
 <p>
   Esta política pode ser atualizada para refletir mudanças no jogo ou na
   legislação. A data de "última atualização" no topo da página indica a versão
@@ -281,7 +313,7 @@
   a seção de Segurança de Dados na Google Play será atualizada junto.
 </p>
 
-<h2>10. Contato</h2>
+<h2>11. Contato</h2>
 <p>
   Dúvidas, pedidos ou reclamações sobre esta política e sobre o tratamento de
   dados podem ser enviados para
